@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Inscription</title>
 
-</head>
-
-<body>
-
+<?php include __DIR__ . '/includes/header.php'; ?>
+<main class="main">
 <div class="form-container">
     <h2>Créer votre compte</h2>
 
@@ -25,7 +18,6 @@
         <button class="btn" type="submit">S'inscrire</button>
     </form>
 </div>
+</main>
 
-</body>
-<script src="script/script.js"></script>
-</html>
+<?php include __DIR__ . '/includes/footer.php'; ?>

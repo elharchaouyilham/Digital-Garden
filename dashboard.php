@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>     
-</head>
 
-<body>
-
+<?php include __DIR__ . '/includes/header.php'; ?>
 <div class="container">
 
     <h2>Bienvenue, <?php echo htmlspecialchars($username); ?> </h2>
@@ -22,5 +15,4 @@
 
 </div>
 
-</body>
-</html>
+<?php include __DIR__ . '/includes/footer.php'; ?>
