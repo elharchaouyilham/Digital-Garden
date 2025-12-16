@@ -23,3 +23,5 @@ CREATE TABLE notes (
     date_creation DATE NOT NULL,
     FOREIGN KEY (theme_id) REFERENCES themes(id) 
 );
+ALTER TABLE  notes 
+MODIFY COLUMN contenu TEXT;
