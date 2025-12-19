@@ -1,27 +1,34 @@
 
 function validateForm() {
-    let username = document.forms["regForm"]["username"].value.trim();
-    let password = document.forms["regForm"]["password"].value.trim();
-    let confirm = document.forms["regForm"]["confirm"].value.trim();
+    let valid = true;
 
-    let errors = [];
+    const form = document.forms["regForm"];
+    const username = form["username"].value.trim();
+    const email = form["email"].value.trim();
+    const password = form["password"].value;
 
-    if (!username.match(/^[a-zA-Z0-9]{3,}$/)) {
-        errors.push("Le nom d'utilisateur doit être alphanumérique et contenir au moins 3 caractères.");
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const passwordRegex = /^.{8,}$/;
+
+    document.getElementById("error-username").textContent = "";
+    document.getElementById("error-email").textContent = "";
+    document.getElementById("error-password").textContent = "";
+
+    if (username === "") {
+        document.getElementById("error-username").textContent = "Nom requis";
+        valid = false;
     }
 
-    if (password.length < 6) {
-        errors.push("Le mot de passe doit contenir au moins 6 caractères.");
+    if (!emailRegex.test(email)) {
+        document.getElementById("error-email").textContent = "Email invalide";
+        valid = false;
     }
 
-    if (password !== confirm) {
-        errors.push("Les mots de passe ne correspondent pas.");
+    if (!passwordRegex.test(password)) {
+        document.getElementById("error-password").textContent = "Minimum 8 caractères";
+        valid = false;
     }
 
-    if (errors.length > 0) {
-        alert(errors.join("\n"));
-        return false;
-    }
-
-    return true;
+    return valid;
 }
+

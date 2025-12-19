@@ -27,6 +27,6 @@
     <p>© 2025 Digital Garden — Tous droits réservés</p>
   </div>
 </footer>
-           <script src="script/script.js"></script>
+           <script src="public\script\script.js"></script>
 </body>
 </html>

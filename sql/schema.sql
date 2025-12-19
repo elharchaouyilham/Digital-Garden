@@ -25,3 +25,6 @@ CREATE TABLE notes (
 );
 ALTER TABLE  notes 
 MODIFY COLUMN contenu TEXT;
+ALTER TABLE  utilisateurs 
+add COLUMN email VARCHAR(30);
+ALTER TABLE  utilisateurs ADD UNIQUE (email);
